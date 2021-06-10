@@ -1,0 +1,176 @@
+/*
+Jogo: Lig-4
+Desenvolvido por:
+    Cirineu Rodrigues
+    Érica Laboissiere
+    Filipe Natividade
+    Luiz Almeida
+Versão: 1.0
+*/
+
+/*RESET*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/*BODY*/
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+    body div#container {
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 48px;
+        font-weight: bolder;
+        color: white;
+    }
+
+        /* LADO ESQUERDO */
+        body div#container div#imagemEStatus {
+            width: 35vw;
+            height: 70vh;
+            text-align: center;
+            display:flex;
+            align-items: center;
+            justify-content: start;
+            flex-flow: column nowrap;
+        }
+
+            /* TEXTO QUANDO ESTÁ NA VERTICAL */
+            body div#container div#imagemEStatus p#vertical {
+                display: none;
+            }
+
+            /* LOGO */
+            body div#container div#imagemEStatus img {
+                width: 30vw;
+                display: block;
+                margin: 0 auto;
+            }
+
+            /* TEXTO "PEÇA ATUAL:" */
+            body div#container div#imagemEStatus p{
+                color: white;
+                font-weight: bolder;
+                font-size: 24px;
+            }
+
+            body div#container div#imagemEStatus div.discosColunas {
+                width: 15vh;
+                height: 15vh;
+                margin: 5px auto;
+                border-radius: 50%;
+                border: 2px solid #fff;
+            }
+
+        /*TABULEIRO*/
+        body div#container div#tabuleiro {
+            width: 60%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #dad8d8c7;
+            border-radius: 20px;
+        }
+
+            /*COLUNAS DO TABULEIRO*/
+            body div#container div#tabuleiro div.column {
+                width: 13%;
+                height: 90%;
+                border-right: 5px solid rgba(1, 20, 29, 0.1);
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-start;
+            }
+
+            body div#container div#tabuleiro div#column6 {
+                border:none;
+            }
+            
+                  /* dicos das colunas */
+                body div#container div#tabuleiro div.column .discosColunas{
+                    width: 5vw;
+                    height: 5vw;
+                    border-radius: 50%;
+                    margin: 2%;
+                } 
+
+                /* disco claro */
+                body div#container div#tabuleiro div.column .discoClaro{
+                    background-color: #855bcc ;
+                }
+                
+                /* disco escuro */
+                body div#container div#tabuleiro div.column .discoEscuro{
+                    background-color: #01141D ;
+                }
+
+@media only screen and (max-width: 768px) and (orientation:portrait) {
+    body {
+        -webkit-transform: rotate(90deg);
+        /* MOZILA */
+        -moz-transform: rotate(90deg);
+        /* IE */
+        -ms-transform: rotate(90deg);
+        /* OPERA */
+        -o-transform: rotate(90deg);
+        /* INTERNET EXPLORER */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation = 1);
+        
+        transform: rotate(90deg);
+    }
+
+        body div#container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+            body div#container div#tabuleiro {
+                width: 60%;
+                height: 50%;
+            }
+
+            body div#container div#imagemEStatus p#vertical {
+                display: block;
+                color: white;
+                font-weight: bolder;
+                font-size: 24px;
+            }
+}
+
+/* TELA PARA COMPUTADOR */
+@media only screen and (min-width: 768px){
+   
+    body div#container div#imagemEStatus {
+        width: 35vw;
+        height: 75vh;
+    }
+        
+        body div#container div#imagemEStatus img {
+            width: 25vw;
+        }
+
+        body div#container div#imagemEStatus p {
+            font-size: 48px;
+        }
+}
